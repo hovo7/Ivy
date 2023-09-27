@@ -67,3 +67,8 @@ def subtract_(x, y, name=None):
 @to_ivy_arrays_and_back
 def tanh_(x, name=None):
     return ivy.inplace_update(x, tanh(x))
+
+@with_supported_dtypes({"2.5.1 and below": ("float32", "float64")}, "paddle")
+@to_ivy_arrays_and_back
+def inverse(x, name=None):
+    return ivy.inverse(x)
